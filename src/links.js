@@ -1,6 +1,6 @@
-export const websiteLink = '#';
-export const tgLink = '#';
-export const xLink = '#';
+export const websiteLink = 'https://kaboruto.com/';
+export const tgLink = 'https://t.me/Kaborutomeme';
+export const xLink = 'https://x.com/Kaborutomeme';
 export const dexScreenerLink = '#';
 export const dexToolsLink = '#';
 export const uniSwapLink = '#';

@@ -6,4 +6,4 @@ export const dexToolsLink = '#';
 export const uniSwapLink = '#';
 export const buySellTax = '0/0';
 export const supply = '1 Billion';
-export const CA = '0x0000000000000000000000000000000000000000';
+export const CA = 'TBA';

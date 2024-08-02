@@ -12,6 +12,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@font-face {
+  font-family: "headingFont";
+  src: url(./assets/fonts/njnaruto.woff);
+}
+@font-face {
+  font-family: "primary";
+  src: url(./assets/fonts/BADABB_.woff);
+}
 
 .App-header {
   background-color: #282c34;
@@ -23,7 +31,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
 }
@@ -34,5 +41,101 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+*{font-family: 'primary' !important ; color: #fff;}
+
+.MuiTypography-h3{
+  font-size: 4.5vw !important;
+  max-width: 31vw;
+  font-family: 'headingFont' !important;
+}
+.MuiTypography-h4{
+  font-size: 2.5vw !important;
+  max-width: 24vw;
+}
+.MuiTypography-body2{
+  font-size: 1.8vw !important;
+  max-width: 19vw;
+  margin: 2vh 0 !important;
+  word-break: break-word;
+}
+
+.MuiTypography-body2.about{
+  max-width: 50%;
+}
+.MuiIconButton-sizeMedium.customButton{
+  color: #ffffff69 !important;
+  background: #ffffff69;
+  width: 3.3vw;
+  border-radius: 0 !important;
+  height: 1px;
+  padding: 2px;
+  margin: 0 0.5vw;
+}
+.MuiIconButton-colorPrimary span{
+  background-color: rgb(255, 255, 255) !important;
+}
+@media screen and (max-width: 1380px) {
+  .MuiTypography-h3{
+    font-size: 8vw !important;
+    max-width: 50vw;
+  }
+  .MuiTypography-h4{
+    font-size: 5.5vw !important;
+    max-width: 51vw;
+  }
+  .MuiTypography-body2{
+    font-size: 2.8vw !important;
+    max-width: 40vw;
+    margin: 20px 0 !important;
+  }
+  
+  .MuiTypography-body2.about{
+    max-width: 70%;
+  }
+}
+@media screen and (max-width: 899px) {
+
+  .MuiTypography-h3{
+    font-size: 52px !important;
+    max-width: 340px;
+  }
+  .MuiTypography-h4{
+    font-size: 46px !important;
+    max-width: 400px;
+  }
+  
+  .MuiTypography-body2{
+    font-size: 30px !important;
+    max-width: 300px;
+    margin: 20px 0 !important;
+  }
+
+  .MuiTypography-body2.about{
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+
+  .MuiTypography-h3{
+    font-size: 45px !important;
+    max-width: unset;
+  }
+  .MuiTypography-h4{
+    font-size: 35px !important;
+    max-width: unset;
+  }
+  
+  .MuiTypography-body2{
+    font-size: 20px !important;
+    max-width: unset;
+    margin: 20px 0 !important;
+  }
+  
+  .MuiTypography-body2.about{
+    max-width: 100%;
   }
 }

@@ -36,23 +36,30 @@ const MenuLink = styled(Link)`
   cursor: pointer;
   transition-duration: 0.5s;
 
+  background-color: #DE1538;
+  font-size: 1.8vw;
+  padding: 2vh 2.5vw;
+  border-radius: 60px;
+  box-shadow: 2px 2px 3px black;
+  margin-right: 1.6vw;
+
+  &.black{
+    background-color: #2C2C2C;
+  }
+  
   &:hover, &:active, &:focus {
     color: #ffffff;
     transition-duration: 0.5s;
   }
   @media (max-width: 899px) {
-    display: block;
-    padding: ${ (props) => props.p? props.p: '15px 0 15px 20px'};
-    text-align: left;
+    font-size: 30px;
+    padding: 20px 40px;
   }
-  &:last-child {
-    border-width: 0px;
-    background: red;
-    width: calc(100% - 40px);
-    margin: 15px auto;
+  @media (max-width: 599px) {
+    font-size: 20px;
     padding: 10px 20px;
-    text-align: center;
   }
+
 `;
 
 const DrawerBox = styled(Box)`

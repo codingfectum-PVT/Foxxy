@@ -14,11 +14,11 @@
 }
 @font-face {
   font-family: "headingFont";
-  src: url(./assets/fonts/njnaruto.woff);
+  src: url(./assets/fonts/RifficFree-Bold.woff);
 }
 @font-face {
   font-family: "primary";
-  src: url(./assets/fonts/BADABB_.woff);
+  src: url(./assets/fonts/RifficFree-Bold.woff);
 }
 
 .App-header {
@@ -53,30 +53,49 @@
   font-family: 'headingFont' !important;
 }
 .MuiTypography-h4{
-  font-size: 2.5vw !important;
-  max-width: 24vw;
+  font-size: 2vw !important;
+  max-width: 48vw;
+  padding: 0 20px;
+  text-align: center;
 }
 .MuiTypography-body2{
-  font-size: 1.8vw !important;
-  max-width: 19vw;
+  font-size: 1.3vw !important;
+  max-width: 30vw;
   margin: 2vh 0 !important;
   word-break: break-word;
 }
 
-.MuiTypography-body2.about{
-  max-width: 50%;
-}
 .MuiIconButton-sizeMedium.customButton{
   color: #ffffff69 !important;
   background: #ffffff69;
-  width: 3.3vw;
+  width: 5vw;
   border-radius: 0 !important;
-  height: 1px;
+  height: 8px;
   padding: 2px;
   margin: 0 0.5vw;
+  border-radius: 50%;
 }
 .MuiIconButton-colorPrimary span{
   background-color: rgb(255, 255, 255) !important;
+}
+@media screen and (max-width: 1600px) {
+  .MuiTypography-h3{
+    font-size: 4vw !important;
+    max-width: 31vw;
+    font-family: 'headingFont' !important;
+  }
+  .MuiTypography-h4{
+    font-size: 1.8vw !important;
+    max-width: 48vw;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .MuiTypography-body2{
+    font-size: 1.1vw !important;
+    max-width: 30vw;
+    margin: 2vh 0 !important;
+    word-break: break-word;
+  }
 }
 @media screen and (max-width: 1380px) {
   .MuiTypography-h3{
@@ -84,17 +103,12 @@
     max-width: 50vw;
   }
   .MuiTypography-h4{
-    font-size: 5.5vw !important;
-    max-width: 51vw;
+    font-size: 3.2vw !important;
+    max-width: 80vw;
   }
   .MuiTypography-body2{
-    font-size: 2.8vw !important;
-    max-width: 40vw;
-    margin: 20px 0 !important;
-  }
-  
-  .MuiTypography-body2.about{
-    max-width: 70%;
+    font-size: 1.8vw !important;
+    max-width: 42vw;
   }
 }
 @media screen and (max-width: 899px) {
@@ -104,38 +118,54 @@
     max-width: 340px;
   }
   .MuiTypography-h4{
-    font-size: 46px !important;
-    max-width: 400px;
+    font-size: 34px !important;
+    max-width: 800px;
+    margin-bottom: 7%;
   }
   
   .MuiTypography-body2{
-    font-size: 30px !important;
-    max-width: 300px;
-    margin: 20px 0 !important;
-  }
-
-  .MuiTypography-body2.about{
-    max-width: 100%;
+    font-size: 22px !important;
+    max-width: 500px;
   }
 }
 @media screen and (max-width: 600px) {
 
   .MuiTypography-h3{
-    font-size: 45px !important;
+    font-size: 62px !important;
     max-width: unset;
   }
   .MuiTypography-h4{
-    font-size: 35px !important;
-    max-width: unset;
+    font-size: 18px !important;
+    max-width: 270px;
   }
   
   .MuiTypography-body2{
-    font-size: 20px !important;
+    font-size: 15px !important;
     max-width: unset;
-    margin: 20px 0 !important;
   }
   
   .MuiTypography-body2.about{
     max-width: 100%;
   }
+}
+.MUI-custom-primary,
+.MUI-custom-default{
+  margin: 0 3px !important;
+}
+.MUI-custom-primary,
+.MUI-custom-primary span,
+.MUI-custom-default,
+.MUI-custom-default span{
+  width: 7vw;
+  background-color: #ffffff5c;
+  border-radius: 10px;
+  height: 7px;
+}
+.MUI-custom-primary, .MUI-custom-primary span{
+  background-color: #ffffff !important;
+  height: 9px !important;
+  padding: 0 !important;
+}
+.MUI-custom-default, .MUI-custom-default span{
+  
 }

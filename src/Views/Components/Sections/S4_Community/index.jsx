@@ -1,14 +1,13 @@
 import emotionStyled from '@emotion/styled'
 import React from 'react';
 import bg from '../../../../assets/community-bg.jpg'
-import headerimg from '../../../../assets/tokenomicsimg.png'
-import tg from '../../../../assets/tg.png'
-import x from '../../../../assets/x.png'
-import ds from '../../../../assets/ds.png'
-import dt from '../../../../assets/dt.png'
+import bgMob from '../../../../assets/community-bg-mob.jpg'
+import tg from '../../../../assets/tg-black.png'
+import x from '../../../../assets/x-black.png'
 import { Box, Grid, Typography } from '@mui/material';
-import {MenuLink} from '../../LockerMenu/styles'
 import { buySellTax, CA, dexScreenerLink, dexToolsLink, supply, tgLink, uniSwapLink, xLink } from '../../../../links';
+import { SnowfallB } from '../../Snowfall';
+
 const Wrapper = emotionStyled.div`
     height: 100vh;
     background-color: #000000;
@@ -18,83 +17,107 @@ const Wrapper = emotionStyled.div`
     background-repeat: no-repeat;
     position: relative;
     text-align: center;
+z-index: 1;
+
+    @media(max-width: 899px){
+        background-image: url(${bgMob});
+        background-position: center;
+    }
 `
 
 const RightContent = emotionStyled.div`
-
-    margin: auto;
-    max-width: 55vw;
     height: 100vh;
-    padding: 8vh 20px;
+    padding: 8vh 1vw 8vh 3.5vw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+    @media(max-width: 1380px){
+        background: linear-gradient(91deg, #071C3A 10%, transparent);
+    }
     @media(max-width: 899px){
-        padding: 10vh 20px;
+        background: unset;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 7vh 20px;
         max-width: unset;
     }
 `
 
-const Footer = emotionStyled.div`
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    background: #E92849;
-    text-align: center;
-`
-
-const CardBody = emotionStyled.div`
-    background: #E92849;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 6px 10px 6px rgba(0, 0, 0, 0.33);
-    text-align: center;
-`
-
 const SocialLink = emotionStyled.a`
     margin: 0 1.5vw;
+    background: #ffffff;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 10px 12px 6px 10px;
+    border: 1px solid white;
+    box-shadow: 0 0 8px white;
+    
+    &:hover{
+        background: #fffffffa;
+    }
+
     img{
-        width: 4.2vw;
+        width: 2vw;
         height: auto;
         
+
         @media(max-width: 899px){
             width: 70px;
+        }
+    }
+`
+const CommBox = emotionStyled(Box)`
+    max-width: 27.9vw;
+    
+    @media(max-width: 1380px){
+        max-width: 33vw;
+    }
+        
+    @media(max-width: 1380px){
+        max-width: 100%;
+    }
+`
+
+const DiscBox =  emotionStyled(Box)`
+    position: absolute;
+    bottom: 10%;
+    max-width: 23vw;
+
+    @media(max-width: 1380px){
+        max-width: 33vw;
+    }
+
+    @media(max-width: 899px){
+        max-width: 340px;
+        position: static;
+
+        p{
+            font-size: 15px !important;
+            text-align: center;
         }
     }
 `
 const Community = () => {
   return (
     <Wrapper>
+        <SnowfallB />
         <RightContent>
-            <Typography maxWidth={'unset'} variant='h3' marginBottom={6}>Join  our  community</Typography>
-            <Grid container justifyContent={'center'}>
-                <Grid item xs={12} sm={9} md={8.5} padding={2}>
-                    <CardBody>
-                        <Box marginTop={'-8%'}>
-                            <SocialLink href={xLink} target='_blank'>
-                                <img src={x} />
-                            </SocialLink>
-                            <SocialLink href={tgLink} target='_blank'>
-                                <img src={tg} />
-                            </SocialLink>
-                            <SocialLink href={dexScreenerLink} target='_blank'>
-                                <img src={ds} />
-                            </SocialLink>
-                            <SocialLink href={dexToolsLink} target='_blank'>
-                                <img src={ds} />
-                            </SocialLink>
-                        </Box>
-                        <Typography maxWidth={'unset'} variant='body2'>info@kaboruto</Typography>
-                    </CardBody>
-                </Grid>
-            </Grid>
+            <CommBox maxWidth={{xs: "100%", md:"27.9vw"}} marginBottom={'3%'} >
+                <Typography maxWidth={'unset'} variant='h4' marginBottom={6}>Join  our  community</Typography>
+                <Box>
+                    <SocialLink href={xLink} target='_blank'>
+                        <img src={x} />
+                    </SocialLink>
+                    <SocialLink href={tgLink} target='_blank'>
+                        <img src={tg} />
+                    </SocialLink>
+                </Box>
+            </CommBox>
+            <DiscBox>
+                <Typography maxWidth={'unset'} variant='body2' textAlign={'left'}>Disclaimer: Meme token made for fun. Not investment advice. Please do your own research.</Typography>
+            </DiscBox>
         </RightContent>
-        <Footer>
-            <Typography maxWidth={'unset'} variant='body2'>© 2024 Kaboruto Token. All rights reserved.</Typography>
-        </Footer>
     </Wrapper>
   )
 }

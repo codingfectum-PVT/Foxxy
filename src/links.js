@@ -1,9 +1,9 @@
-export const websiteLink = 'https://kaboruto.com/';
-export const tgLink = 'https://t.me/Kaborutomeme';
-export const xLink = 'https://x.com/Kaborutomeme';
+export const websiteLink = '#';
+export const tgLink = 'https://t.me/foxxyeth';
+export const xLink = 'https://x.com/foxxyeth';
 export const dexScreenerLink = '#';
 export const dexToolsLink = '#';
 export const uniSwapLink = '#';
-export const buySellTax = '0/0';
-export const supply = '1 Billion';
+export const buySellTax = '0%';
+export const supply = '420.69 Billion tokens';
 export const CA = 'TBA';

@@ -1,0 +1,41 @@
+.snowfall-wrapper{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.snowfall-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Snowflake style */
+.snowflake {
+  position: absolute;
+  top: -10vh;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.snowflake {
+  background: linear-gradient(45deg, #bebebe, transparent);;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(110vh); /* Snowflakes will fall down */
+  }
+}
+
+.snowflake {
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

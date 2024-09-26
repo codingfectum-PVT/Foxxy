@@ -1,94 +1,74 @@
 import emotionStyled from '@emotion/styled'
 import React from 'react';
 import bg from '../../../../assets/tokenomics-bg.jpg'
-import logo from '../../../../assets/logo.png'
-import headerimg from '../../../../assets/tokenomicsimg.png'
+import bgMob from '../../../../assets/tokenomics-bg-mob.jpg'
 import { Box, Grid, Typography } from '@mui/material';
-import {MenuLink} from '../../LockerMenu/styles'
-import { buySellTax, CA, supply, uniSwapLink } from '../../../../links';
+import { buySellTax, CA, dexScreenerLink, dexToolsLink, supply, tgLink, uniSwapLink, xLink } from '../../../../links';
 const Wrapper = emotionStyled.div`
     height: 100vh;
-    background-color: #FF274C;
+    background-color: #0C2442;
     background-image: url(${bg});
-    background-position: center;
+    background-position: left;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     text-align: center;
-    z-index: 0;
+
+    @media(max-width: 899px){
+        background-image: url(${bgMob});
+        background-position: center;
+    }
 `
 
 const RightContent = emotionStyled.div`
-    margin: auto;
-    max-width: 55vw;
     height: 100vh;
-    padding: 8vh 20px;
+    padding: 8vh 3.5vw 8vh 3.5vw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: column;
-    @media(max-width: 1380px){ 
-        max-width: 75vw;
-    }
+    
+    p br{ display: none; }
+
     @media(max-width: 899px){
         padding: 10vh 20px;
         max-width: unset;
+        align-items: center;
+        justify-content: flex-end;
+
+        p br{ display: block; }
     }
 `
 
-const RightImage = emotionStyled.img`
+const SocialLink = emotionStyled.a`
+    margin: 0 1.5vw;
+    img{
+        width: 4.2vw;
+        height: auto;
+        
+        @media(max-width: 899px){
+            width: 70px;
+        }
+    }
+`
+const DiscBox =  emotionStyled(Box)`
     position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 40vh;
-    z-index: -1;
-    
-    @media(max-width: 899px){
-        display:none;
-    }
-`
-
-const CardBody = emotionStyled.div`
-    background: #E92849;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 6px 10px 6px rgba(0, 0, 0, 0.33);
-    text-align: center;
+    bottom: 10%;
+    max-width: 23vw;
 `
 const Tokenomics = () => {
   return (
     <Wrapper>
         <RightContent>
-            <Typography variant='h3' marginBottom={3}>Tokenomics</Typography>
-            <Grid container>
-                <Grid item xs={12} padding={2}>
-                    <CardBody>
-                        <Typography maxWidth={'unset'} variant='h4'>Contract</Typography>
-                        <Typography maxWidth={'unset'} variant='body2'>{CA}</Typography>
-                    </CardBody>
-                </Grid>
-                <Grid item xs={12} sm={4} padding={2}>
-                    <CardBody>
-                        <Typography variant='h4'>Taxes</Typography>
-                        <Typography variant='body2'>{buySellTax}</Typography>
-                    </CardBody>
-                </Grid>
-                <Grid item xs={12} sm={4} padding={2}>
-                    <CardBody>
-                        <Typography variant='h4'>Network</Typography>
-                        <Typography variant='body2'>Ethereum</Typography>
-                    </CardBody>
-                </Grid>
-                <Grid item xs={12} sm={4} padding={2}>
-                    <CardBody>
-                        <Typography variant='h4'>Supply</Typography>
-                        <Typography variant='body2'>{supply}</Typography>
-                    </CardBody>
-                </Grid>
-            </Grid>
+            <Box>
+                <Typography maxWidth={'unset'} variant='h3' marginBottom={6} textAlign={{md:'right', xs: 'left'}}>Tokenomics</Typography>
+                <Typography maxWidth={'unset'} variant='body2' textAlign={{md:'right', xs: 'left'}}>Total Supply: <br />{supply}</Typography>
+                <Typography maxWidth={'unset'} variant='body2' textAlign={{md:'right', xs: 'left'}}>Transaction Tax: <br />{buySellTax} on buy/sell</Typography>
+                <Typography maxWidth={'unset'} variant='body2' textAlign={{md:'right', xs: 'left'}}>Liquidity: Locked</Typography>
+                <Typography maxWidth={'unset'} variant='body2' textAlign={{md:'right', xs: 'left'}}>Blockchain: <br />Ethereum (ERC-20)</Typography>
+                <Typography maxWidth={'unset'} variant='body2' textAlign={{md:'right', xs: 'left'}}>Contract Address: <br />{CA}</Typography>
+            </Box>
         </RightContent>
-        <RightImage src={headerimg} />
     </Wrapper>
   )
 }

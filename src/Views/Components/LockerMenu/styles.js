@@ -26,38 +26,47 @@ const SiteLogo = styled.img`
   height: auto;
 `;
 const MenuLink = styled(Link)`
-  font-size: max(15px, 17px);
   font-family: "poppins-light";
   font-weight: bolder;
-  color: ${ (props) => props.theme.textPrimary};
+  color: #707070;
   text-transform: uppercase;
   text-decoration: none;
   padding: ${ (props) => props.p? props.p: '0 15px'};
   cursor: pointer;
   transition-duration: 0.5s;
 
-  background-color: #DE1538;
-  font-size: 1.8vw;
-  padding: 2vh 2.5vw;
+  background-color: #FFFFFF;
+  font-size: 1.5vw;
+  padding: 1.1vh 2.5vw;
   border-radius: 60px;
   box-shadow: 2px 2px 3px black;
   margin-right: 1.6vw;
 
-  &.black{
-    background-color: #2C2C2C;
-  }
-  
   &:hover, &:active, &:focus {
     color: #ffffff;
+    background-color: #263C93;
     transition-duration: 0.5s;
   }
+
+  &.black{
+    background-color: #263C93;
+    color: #ffffff;
+
+    &:hover, &:active, &:focus {
+      background-color: #ffffff;
+      color: #707070;
+      transition-duration: 0.5s;
+    }
+  }
+  
+  
   @media (max-width: 899px) {
-    font-size: 30px;
-    padding: 20px 40px;
+    font-size: 22px;
+    padding: 10px 40px;
   }
   @media (max-width: 599px) {
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 15px;
+    padding: 8px 20px;
   }
 
 `;

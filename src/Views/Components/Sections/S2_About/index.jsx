@@ -37,7 +37,7 @@ const About = () => {
         <RightContent>
             <Box textAlign={'center'}>
                 <Typography variant='h3' textAlign={'center'} marginLeft={3} fontFamily={'headingFont'}>About</Typography>
-                <Typography variant='body2' padding={'0 20px 30px'} textAlign={'center'}>$FOXXY is a playful mix of dog and fox, combining the loyalty, energy, and loyalty of a dog with the cleverness and agility of a fox. With a total supply of 420.69 billion tokens and 0% transaction tax, Foxxy is here to bring fun and community-driven growth on the Ethereum blockchain.</Typography>
+                <Typography variant='body2' padding={'0 20px 30px'} textAlign={'center'}>$FOXXY is a playful mix of dog and fox, combining the energy and loyalty of a dog with the cleverness and agility of a fox. With a total supply of 420.69 billion tokens and 0% transaction tax, Foxxy is here to bring fun and community-driven growth on the Ethereum blockchain.</Typography>
             </Box>
         </RightContent>
     </Wrapper>

@@ -9,8 +9,10 @@ import emotionStyled from '@emotion/styled';
 export default function ControlledAccordions({data, pa, pb, pc, pd}) {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleChange =
-    (panel) => (event, isExpanded) => {
+  const handleChange = (panel) => (event, isExpanded) => {
+    event.stopPropagation();
+      // const swipeDistance = touchStartX.current - touchEndX.current;
+      // console.log("Accordions: ", Math.abs(swipeDistance));
       setExpanded(isExpanded ? panel : false);
     };
 

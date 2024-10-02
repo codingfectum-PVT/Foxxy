@@ -63,7 +63,7 @@ const SocialLink = emotionStyled.a`
         
 
         @media(max-width: 899px){
-            width: 70px;
+            width: 30px;
         }
     }
 `

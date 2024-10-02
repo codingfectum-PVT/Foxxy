@@ -95,9 +95,11 @@ const CustomSlider = () => {
     const swipeDistance = touchStartX.current - touchEndX.current;
     
     // Set a threshold for a valid swipe to trigger slide movement
-    const swipeThreshold = 120; // 50px is a good threshold for detecting a swipe
-  
+    const swipeThreshold = 110; // 50px is a good threshold for detecting a swipe
+
+    console.log("Outter test: ",Math.abs(swipeDistance));
     if (Math.abs(swipeDistance) > swipeThreshold) {
+      console.log("inner test: ", Math.abs(swipeDistance));
       if (swipeDistance > 0) {
         // Swipe left (next slide)
         setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);

@@ -21,7 +21,7 @@ const Wrapper = emotionStyled.div`
     z-index: 0;
     
     @media(max-width: 899px){
-    background-image: url(${bgMob});
+        background-image: url(${bgMob});
     }
 `
 
@@ -29,8 +29,10 @@ const RightContent = emotionStyled.div`
     background: linear-gradient(0deg, #111E51 10%, transparent 50%);
     height: 100vh;
     padding: 8vh 0 0 8vw;
+    
     @media(max-width: 899px){
         padding: 4vh 20px;
+        background: linear-gradient(0deg, #111E51 10%, transparent 50%, #111E51 100%)
     }
 `
 
@@ -77,6 +79,9 @@ const SocialLinks = emotionStyled.a`
         transition-duration: 0.5s;
     }
 `
+const handleStopPropagation = (event) => {
+    // event.stopPropagation();
+};
 
 const Header = () => {
   return (
@@ -90,13 +95,23 @@ const Header = () => {
             <Box position='absolute' bottom={{xs: "10%", md:"16%"}} textAlign='center' left='0px' right={'0px'} >
                 <Typography margin={'auto'} marginBottom={'3%'} variant='h4'>Welcome to the World of $FOXXY, The Clever yet Playful Token on the Ethereum Blockchain!</Typography>
                 <Box marginTop={3} textAlign='center'>
-                    <MenuLink href={uniSwapLink} target='_blank'>Buy Now</MenuLink>
-                    <MenuLink href={dexToolsLink} target='_blank' className='black'>Chart</MenuLink>
+                    <MenuLink 
+                        href={uniSwapLink} 
+                        // target='_blank'
+                        onClick={(e) => e.stopPropagation()}
+                        onTouchStart={(e) => e.stopPropagation()}
+                    >Buy Now</MenuLink>
+                    <MenuLink 
+                        href={dexToolsLink} 
+                        // target='_blank' 
+                        className='black'
+                        onClick={handleStopPropagation}
+                    >Chart</MenuLink>
                 </Box>
             </Box>
         </RightContent>
         <RightBox>
-            <SocialLinks href={xLink} target='_blank' className='black'>
+            <SocialLinks href={xLink}  target='_blank' className='black'>
                 <img src={x} style={{width: 30, height: 30}} />
             </SocialLinks>
             <SocialLinks href={tgLink} target='_blank' className='black'>
